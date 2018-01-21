@@ -184,6 +184,7 @@ void setup() {
     for ( uint8_t j = 0; j < 4; j++ ) {        // Loop 4 times
       EEPROM.write( 2 + j, readCard[j] );  // Write scanned PICC's UID to EEPROM, start from address 3
     }
+    EEPROM.write(0,0);			   // Clear PICCs Index to make ready for new card entries and remove history	  
     EEPROM.write(1, 143);                  // Write to EEPROM we defined Master Card.
     Serial.println(F("Master Card Defined"));
   }
